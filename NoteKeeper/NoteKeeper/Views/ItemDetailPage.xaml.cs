@@ -9,14 +9,14 @@ namespace NoteKeeper.Views
 {
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
-        public Note Note { get; set; }
+        ItemDetailViewModel viewModel; 
         public IList<string> Courses { get; set; }
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
             InitializeData();
-            BindingContext = this.Note;
+            this.viewModel = viewModel;
+            BindingContext = this.viewModel;
             NoteCurse.BindingContext = this;
         }
          
@@ -24,7 +24,8 @@ namespace NoteKeeper.Views
         {
             InitializeComponent();
             InitializeData();
-            BindingContext = this.Note;
+            this.viewModel = new ItemDetailViewModel();
+            BindingContext = this.viewModel;
             NoteCurse.BindingContext = this;
         }
 
@@ -34,12 +35,7 @@ namespace NoteKeeper.Views
             var pldataSture = new MockPLDataStore();
             Courses = await pldataSture.GetCourseAsync();
 
-            Note = new Note()
-            {
-                Course = Courses[0],
-                Heading = "Test note",
-                Text = "Text for a test note"
-            };
+           
         }
 
         private void SaveItem_Clicked(object sender, System.EventArgs e)
