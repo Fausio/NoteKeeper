@@ -16,9 +16,14 @@ namespace NoteKeeper.Services
         {
             mockCources = new List<string>
             {
-                "curso 1",
-                "curso 2",
-                "curso 3"
+                "The Curse Of St. Anne’s Well",
+                "Jacques De Molay’s Malediction",
+                "The Curse Of King Casimir",
+                "Commercial Rivalry Curses",
+                "Broken Assyrian Stele",
+                "The City That Jesus Cursed",
+                "The Wrath Of The Fairies",
+                "The Croesus Treasure’s Trail Of Misery",
             };
 
             mockNotes = new List<Note>
@@ -44,7 +49,7 @@ namespace NoteKeeper.Services
 
         public Task<List<string>> GetCourseAsync()
         {
-            throw new NotImplementedException();
+            return Task.FromResult(mockCources);
         }
 
         public Task<IList<Note>> GetNotesAsync()

@@ -13,14 +13,9 @@
 
         <Picker x:Name="NoteCurse" 
                 FontSize="Medium"
-                Title="Curse">
-            <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Curse 1</x:String>
-                    <x:String>Curse 2</x:String>
-                    <x:String>Curse 2</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
+                Title="Curse"
+                ItemsSource="{Binding Courses}">
+            
         </Picker>
 
         <Entry FontSize="Medium"  
