@@ -14,7 +14,8 @@
         <Picker x:Name="NoteCurse" 
                 FontSize="Medium"
                 Title="Curse"
-                ItemsSource="{Binding Courses}">
+                ItemsSource="{Binding Courses}"
+                SelectedItem="{Binding Note.Course}">
             
         </Picker>
 
