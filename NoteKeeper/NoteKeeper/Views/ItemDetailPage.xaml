@@ -5,9 +5,25 @@
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
+
         <Label Text="Curse:" FontSize="Medium" />
+        <Picker x:Name="NoteCurse" FontSize="Medium">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Curse 1</x:String>
+                    <x:String>Curse 2</x:String>
+                    <x:String>Curse 2</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
         <Label Text="Heading:" FontSize="Medium" />
+        <Entry FontSize="Medium"  
+               x:Name="NoteHeading"/>
+
         <Label Text="Text:" FontSize="Medium" />
+        <Editor x:Name="NoteText" FontSize="Medium" />
+
     </StackLayout>
-    
+
 </ContentPage>
