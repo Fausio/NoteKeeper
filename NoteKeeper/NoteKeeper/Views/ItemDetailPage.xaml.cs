@@ -17,6 +17,7 @@ namespace NoteKeeper.Views
             InitializeData();
             this.viewModel = viewModel;
             BindingContext = this.viewModel;
+            this.viewModel.Note.Course = Courses[0];
             NoteCurse.BindingContext = this;
         }
          
