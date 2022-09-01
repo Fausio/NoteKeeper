@@ -26,7 +26,8 @@
 
         <Editor x:Name="NoteText" 
                 FontSize="Medium"
-                Placeholder="Note Text"/>
+                Placeholder="Note Text"
+                AutoSize="TextChanges"/>
 
     </StackLayout>
 
