@@ -6,8 +6,10 @@
 
     <StackLayout Spacing="20" Padding="15">
 
-        <Label Text="Curse:" FontSize="Medium" />
-        <Picker x:Name="NoteCurse" FontSize="Medium">
+
+        <Picker x:Name="NoteCurse" 
+                FontSize="Medium"
+                Title="Curse">
             <Picker.ItemsSource>
                 <x:Array Type="{x:Type x:String}">
                     <x:String>Curse 1</x:String>
@@ -17,12 +19,14 @@
             </Picker.ItemsSource>
         </Picker>
 
-        <Label Text="Heading:" FontSize="Medium" />
         <Entry FontSize="Medium"  
-               x:Name="NoteHeading"/>
+               x:Name="NoteHeading"
+               Placeholder="Note Heading"/>
 
-        <Label Text="Text:" FontSize="Medium" />
-        <Editor x:Name="NoteText" FontSize="Medium" />
+
+        <Editor x:Name="NoteText" 
+                FontSize="Medium"
+                Placeholder="Note Text"/>
 
     </StackLayout>
 
