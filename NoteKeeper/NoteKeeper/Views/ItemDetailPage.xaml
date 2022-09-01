@@ -25,13 +25,15 @@
 
         <Entry FontSize="Medium"  
                x:Name="NoteHeading"
-               Placeholder="Note Heading"/>
+               Placeholder="Note Heading"
+               Text="{Binding Heading}"/>
 
 
         <Editor x:Name="NoteText" 
                 FontSize="Medium"
                 Placeholder="Note Text"
-                AutoSize="TextChanges"/>
+                AutoSize="TextChanges"
+                Text="{Binding Text}"/>
 
     </StackLayout>
 
