@@ -18,5 +18,10 @@ namespace NoteKeeper.Views
             BindingContext = new ItemDetailViewModel();
 
         }
+
+        private void ToolbarItem_Clicked(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
