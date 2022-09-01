@@ -9,7 +9,7 @@ namespace NoteKeeper.Views
 {
     public partial class ItemDetailPage : ContentPage
     {
-      
+        ItemDetailViewModel viewModel;
         public Note Note { get; set; }
         public IList<string> Courses { get; set; }
         public ItemDetailPage(ItemDetailViewModel viewModel)
