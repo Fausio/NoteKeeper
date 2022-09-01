@@ -19,9 +19,10 @@ namespace NoteKeeper.Views
 
         }
 
-        private void ToolbarItem_Clicked(object sender, System.EventArgs e)
+        private void SaveItem_Clicked(object sender, System.EventArgs e)
         {
-
+            DisplayAlert("Save", "Do you whant to save this item ?", "Continuar ➡️ ", "Cancelar ❌");
         }
+         
     }
 }
