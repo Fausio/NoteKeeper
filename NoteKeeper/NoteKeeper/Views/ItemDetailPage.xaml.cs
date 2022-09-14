@@ -10,38 +10,28 @@ namespace NoteKeeper.Views
     public partial class ItemDetailPage : ContentPage
     {
         ItemDetailViewModel viewModel; 
-        public IList<string> Courses { get; set; }
+        
 
         #region ctor
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
-            InitializeData();
+           
             this.viewModel = viewModel;
             BindingContext = this.viewModel;
-            this.viewModel.Note.Course = Courses[0];
-            NoteCurse.BindingContext = this;
+             
         }
 
         public ItemDetailPage()
         {
             InitializeComponent();
-            InitializeData();
+            
             this.viewModel = new ItemDetailViewModel();
-            BindingContext = this.viewModel;
-            NoteCurse.BindingContext = this;
+            BindingContext = this.viewModel; 
         }
         #endregion
 
-
-        private async void InitializeData()
-        {
-
-            var pldataSture = new MockPLDataStore();
-            Courses = await pldataSture.GetCourseAsync();
-
-           
-        }
+ 
 
         private void SaveItem_Clicked(object sender, System.EventArgs e)
         {
