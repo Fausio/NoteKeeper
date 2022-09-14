@@ -10,8 +10,9 @@ namespace NoteKeeper.ViewModels
     {
 
         public Note Note { get; set; }
-        public ItemDetailViewModel(Note model = null)
+        public ItemDetailViewModel(Item item = null)
         {
+            Title = item?.Text;
             Note = new Note
             {
                 Heading = "Test note",
