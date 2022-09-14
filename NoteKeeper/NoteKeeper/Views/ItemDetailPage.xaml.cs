@@ -11,6 +11,8 @@ namespace NoteKeeper.Views
     {
         ItemDetailViewModel viewModel; 
         public IList<string> Courses { get; set; }
+
+        #region ctor
         public ItemDetailPage(ItemDetailViewModel viewModel)
         {
             InitializeComponent();
@@ -20,7 +22,7 @@ namespace NoteKeeper.Views
             this.viewModel.Note.Course = Courses[0];
             NoteCurse.BindingContext = this;
         }
-         
+
         public ItemDetailPage()
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace NoteKeeper.Views
             BindingContext = this.viewModel;
             NoteCurse.BindingContext = this;
         }
+        #endregion
+
 
         private async void InitializeData()
         {

@@ -11,6 +11,6 @@ namespace NoteKeeper.Services
          Task<String> AddNoteAsync(Note model);
          Task<Boolean> UpdateNoteAsync(Note model);
          Task<IList<Note>> GetNotesAsync();
-         Task<List<string>> GetCourseAsync();
+         Task<List<String>> GetCourseAsync();
     }
 }
