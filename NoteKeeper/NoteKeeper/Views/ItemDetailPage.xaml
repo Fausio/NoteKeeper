@@ -5,6 +5,7 @@
              Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="CancelItem_Clicked"/>
         <ToolbarItem Text="Save" Clicked="SaveItem_Clicked"/>
     </ContentPage.ToolbarItems>
     
@@ -15,21 +16,21 @@
                 FontSize="Medium"
                 Title="Curse"
                 ItemsSource="{Binding Courses}"
-                SelectedItem="{Binding Note.Course}">
+                SelectedItem="{Binding NoteCourse}">
             
         </Picker>
 
         <Entry FontSize="Medium"  
                x:Name="NoteHeading"
                Placeholder="Note Heading"
-               Text="{Binding Note.Heading}"/>
+               Text="{Binding NoteHeading}"/>
 
 
         <Editor x:Name="NoteText" 
                 FontSize="Medium"
                 Placeholder="Note Text"
                 AutoSize="TextChanges"
-                Text="{Binding Note.Text}"/>
+                Text="{Binding NoteText}"/>
 
     </StackLayout>
 

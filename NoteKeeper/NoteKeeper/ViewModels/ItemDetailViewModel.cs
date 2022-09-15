@@ -14,6 +14,42 @@ namespace NoteKeeper.ViewModels
 
         public Note Note { get; set; }
         public IList<string> Courses { get; set; }
+
+
+        #region Props of NotificationPropertyChenges
+
+        public string NoteCourse
+        {
+            get => Note.Course;
+            set { Note.Course = value; OnPropertyChanged(); }
+
+        }
+        public string NoteText
+        {
+            get => Note.Text;
+            set { Note.Text = value; OnPropertyChanged(); }
+
+        }
+
+        public string NoteHeading
+        {
+            get => Note.Heading;
+
+            set
+            {
+                Note.Heading = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
+        #endregion
+
+
+
+
+        #region ctor
         public ItemDetailViewModel(Item item = null)
         {
             Title = item?.Text;
@@ -24,9 +60,11 @@ namespace NoteKeeper.ViewModels
                 Heading = "Test note",
                 Text = "Text for note in viewModel",
                 Course = Courses[0]
-                
+
             };
         }
+        #endregion
+
 
         private async void asyncInitializeCurseList()
         {
