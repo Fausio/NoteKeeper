@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace NoteKeeper.Services
 {
-    public interface PLDataStore
+    public interface PLDataStore<T>
     {
-         Task<String> AddNoteAsync(Note model);
-         Task<Boolean> UpdateNoteAsync(Note model);
-         Task<IList<Note>> GetNotesAsync();
-         Task<List<String>> GetCourseAsync();
+         Task<String> AddNoteAsync(T model);
+         Task<Boolean> UpdateNoteAsync(T model);
+         Task<IEnumerable<T>> GetNotesAsync(bool forceRefresh = false);
+        Task<List<String>> GetCourseAsync();
     }
 }

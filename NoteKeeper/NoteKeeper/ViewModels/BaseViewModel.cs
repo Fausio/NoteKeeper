@@ -12,7 +12,7 @@ namespace NoteKeeper.ViewModels
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
-        public PLDataStore pLDataStore => DependencyService.Get<PLDataStore>();
+        public PLDataStore<Note> pLDataStore => DependencyService.Get<PLDataStore<Note>>();
 
         bool isBusy = false;
         public bool IsBusy

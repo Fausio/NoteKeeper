@@ -16,12 +16,15 @@ namespace NoteKeeper.Views
     {
         ItemsViewModel _viewModel;
 
+        #region ctor
         public ItemsPage()
         {
             InitializeComponent();
 
             BindingContext = _viewModel = new ItemsViewModel();
         }
+        #endregion
+
 
         protected override void OnAppearing()
         {

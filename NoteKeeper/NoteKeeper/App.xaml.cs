@@ -12,8 +12,7 @@ namespace NoteKeeper
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
+            DependencyServiceRegister();
             MainPage = new AppShell();
         }
 
@@ -27,6 +26,14 @@ namespace NoteKeeper
 
         protected override void OnResume()
         {
+        }
+
+
+        private void DependencyServiceRegister()
+        {
+
+            DependencyService.Register<MockDataStore>();
+            DependencyService.Register<MockPLDataStore>();
         }
     }
 }
