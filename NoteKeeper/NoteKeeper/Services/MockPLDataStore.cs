@@ -51,19 +51,19 @@ namespace NoteKeeper.Services
         {
             return Task.FromResult(mockCources);
         }
-         
+
         public async Task<IEnumerable<Note>> GetNotesAsync(bool forceRefresh = false)
         {
             try
             {
-                return await Task.FromResult(mockNotes); 
+                return await Task.FromResult(mockNotes);
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw ex;
             }
-            
+
         }
 
 
