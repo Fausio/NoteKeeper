@@ -36,9 +36,15 @@ namespace NoteKeeper.Views
 
         private void CancelItem_Clicked(object sender, System.EventArgs e)
         {
-            viewModel.NoteHeading = "XXXXXXXX";
-            viewModel.NoteText = "YYYYYYYYY";
-            viewModel.NoteCourse = viewModel.Courses[2];
+
+            Navigation.PopModalAsync();
+
+            //var sdsd = new NavigationPage();
+            //sdsd.PopAsync();
+
+            //viewModel.NoteHeading = "XXXXXXXX";
+            //viewModel.NoteText = "YYYYYYYYY";
+            //viewModel.NoteCourse = viewModel.Courses[2];
             //  DisplayAlert("Cancel", "Cancel was selected", "Continuar ➡️ ", "Cancelar ❌");
         }
         private void SaveItem_Clicked(object sender, System.EventArgs e)

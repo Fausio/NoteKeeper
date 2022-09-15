@@ -74,7 +74,8 @@ namespace NoteKeeper.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(ItemDetailPage));
+            //await Shell.Current.GoToAsync(nameof(ItemDetailPage));
+            await App.Current.MainPage.Navigation.PushModalAsync(new NavigationPage(new ItemDetailPage()));
         }
 
         async void OnItemSelected(Note note)
@@ -82,8 +83,8 @@ namespace NoteKeeper.ViewModels
             if (note == null)
                 return;
              
-            await App.Current.MainPage.Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(note)));
-             
+            await App.Current.MainPage.Navigation.PushModalAsync(new NavigationPage (new ItemDetailPage(new ItemDetailViewModel(note))) );
+
         }
     }
 }

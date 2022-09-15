@@ -1,7 +1,6 @@
-﻿using NoteKeeper.Models;
-using NoteKeeper.Setup;
-using NoteKeeper.ViewModels;
-using NoteKeeper.Views;
+﻿using NoteKeeperWithMasterDetail.Models;
+using NoteKeeperWithMasterDetail.ViewModels;
+using NoteKeeperWithMasterDetail.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,21 +10,18 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace NoteKeeper.Views
+namespace NoteKeeperWithMasterDetail.Views
 {
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel _viewModel;
 
-        #region ctor
         public ItemsPage()
         {
-            InitializeComponent(); 
-          
+            InitializeComponent();
+
             BindingContext = _viewModel = new ItemsViewModel();
         }
-        #endregion
-
 
         protected override void OnAppearing()
         {

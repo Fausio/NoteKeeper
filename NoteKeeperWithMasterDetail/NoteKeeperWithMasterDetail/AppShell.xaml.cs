@@ -1,18 +1,18 @@
-﻿using NoteKeeper.Setup;
-using NoteKeeper.ViewModels;
-using NoteKeeper.Views;
+﻿using NoteKeeperWithMasterDetail.ViewModels;
+using NoteKeeperWithMasterDetail.Views;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
-namespace NoteKeeper
+namespace NoteKeeperWithMasterDetail
 {
     public partial class AppShell : Xamarin.Forms.Shell
     {
         public AppShell()
         {
             InitializeComponent();
-            RegisterRoute.Register_Route();
+            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
+            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)

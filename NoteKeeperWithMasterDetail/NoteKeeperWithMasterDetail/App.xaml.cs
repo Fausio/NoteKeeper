@@ -1,11 +1,10 @@
-﻿using NoteKeeper.Services;
-using NoteKeeper.Setup;
-using NoteKeeper.Views;
+﻿using NoteKeeperWithMasterDetail.Services;
+using NoteKeeperWithMasterDetail.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace NoteKeeper
+namespace NoteKeeperWithMasterDetail
 {
     public partial class App : Application
     {
@@ -13,7 +12,8 @@ namespace NoteKeeper
         public App()
         {
             InitializeComponent();
-            DependencyServiceRegister.Dependency_ServiceRegister();
+
+            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
@@ -28,6 +28,5 @@ namespace NoteKeeper
         protected override void OnResume()
         {
         }
-         
     }
 }
