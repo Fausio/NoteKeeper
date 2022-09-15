@@ -9,7 +9,8 @@ namespace NoteKeeper.Views
 {
     public partial class ItemDetailPage : ContentPage
     {
-        ItemDetailViewModel viewModel;
+        public ItemDetailViewModel viewModel;
+
 
 
         #region ctor

@@ -50,18 +50,14 @@ namespace NoteKeeper.ViewModels
 
 
         #region ctor
-        public ItemDetailViewModel(Item item = null)
+        public ItemDetailViewModel(Note item = null)
         {
-            Title = item?.Text;
+            Title = item == null ? "New Note" : "Edit Note";
             asyncInitializeCurseList();
 
-            Note = new Note
-            {
-                Heading = "Test note",
-                Text = "Text for note in viewModel",
-                Course = Courses[0]
+            Note = item ?? new Note();
 
-            };
+
         }
         #endregion
 

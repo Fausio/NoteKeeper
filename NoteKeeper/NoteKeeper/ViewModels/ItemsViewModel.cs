@@ -10,12 +10,12 @@ namespace NoteKeeper.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        private Item _selectedItem;
+        private Note _selectedNote;
 
         public ObservableCollection<Note> Notes { get; }
         public Command LoadItemsCommand { get; }
         public Command AddItemCommand { get; }
-        public Command<Item> ItemTapped { get; }
+        public Command<Note> NoteTapped { get; }
 
         public ItemsViewModel()
         {
@@ -23,7 +23,7 @@ namespace NoteKeeper.ViewModels
             Notes = new ObservableCollection<Note>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            ItemTapped = new Command<Item>(OnItemSelected);
+            NoteTapped = new Command<Note>(OnItemSelected);
 
             AddItemCommand = new Command(OnAddItem);
         }
@@ -59,15 +59,15 @@ namespace NoteKeeper.ViewModels
         public void OnAppearing()
         {
             IsBusy = true;
-            SelectedItem = null;
+            SelectedNote = null;
         }
 
-        public Item SelectedItem
+        public Note SelectedNote
         {
-            get => _selectedItem;
+            get => _selectedNote;
             set
             {
-                SetProperty(ref _selectedItem, value);
+                SetProperty(ref _selectedNote, value);
                 OnItemSelected(value);
             }
         }
@@ -77,13 +77,13 @@ namespace NoteKeeper.ViewModels
             await Shell.Current.GoToAsync(nameof(ItemDetailPage));
         }
 
-        async void OnItemSelected(Item item)
+        async void OnItemSelected(Note note)
         {
-            if (item == null)
+            if (note == null)
                 return;
-
-            // This will push the ItemDetailPage onto the navigation stack
-            await Shell.Current.GoToAsync($"{nameof(ItemDetailPage)}?{nameof(ItemDetailViewModel.Note.Id)}={item.Id}");
+             
+            await App.Current.MainPage.Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(note)));
+             
         }
     }
 }
