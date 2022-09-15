@@ -136,10 +136,4 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\NoteKeeperWithMasterDetail\NoteKeeperWithMasterDetail.csproj">
-      <Project>{D5DE339F-681E-4915-BD09-DFCDC2C02A33}</Project>
-      <Name>NoteKeeperWithMasterDetail</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
